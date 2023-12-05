@@ -1,16 +1,21 @@
  <html>
+    <head>
+        <title>Clicker</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/@wcj/dark-mode"></script>
+    </head>
     <script>
         function addPoint(points) {
             document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML) + points;
         }
     </script>
     <p id="score">0</p>
-    <br>
-    <br>
-    <br>
-    <button type="button" onclick="addPoint(1)">click</button>
-    <button type="button" onclick="addCps(1)">add cps for 10 points</button> 
-    <p>cps: </p><p id="cps">0</p>
+    <button type="button" onclick="addPoint(1)" class="button button1">click</button>
+    <button type="button" onclick="addCps(1)" class="button button2">add cps for 10 points</button> 
+    <p>cps: <cps id="cps">0</cps></p>
     <script>
         function addCps(cpsValue) {
             if(parseInt(document.getElementById("score").innerHTML) >= 10){
@@ -20,4 +25,5 @@
         }
         setInterval(function(){addPoint(parseInt(document.getElementById("cps").innerHTML))}, 1000);
     </script>
+    <dark-mode dark="Dark" light="Light"></dark-mode>
 </html>
